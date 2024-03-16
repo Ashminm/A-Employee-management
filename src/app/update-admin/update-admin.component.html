@@ -1,0 +1,32 @@
+<div class="container-fluid shadow" style="height: 450px;">
+    
+        <div *ngIf="!adminstatus" class="d-flex flex-column justify-content-center align-items-center h-100">
+            <p>Update Admin</p>
+            <a class="text-decoration text-info" style="cursor: pointer;" (click)="updateAdminConfirm()">Edit Profile</a>
+        </div>
+        <div class="p-3" *ngIf="adminstatus">
+        <h2 class="pt-3 text-center">Admin</h2>
+        <form (ngSubmit)="handleUpdateAdmin()">
+            <div class="mb-3 mt-3 p-2">
+                <label for="pimg" class="d-flex justify-content-center">
+                    <input type="file" name="" (change)="getFile($event)" id="pimg" style="display: none;">
+                    <img [src]='profilePicture' height="100px" width="100px" alt="profilePicture" style="border-radius: 50%;">
+                </label>
+            </div>
+            <div class="mb-4">
+                <label for="">Username </label>
+                <input type="text" class="form-control" name="uname" [(ngModel)]="adminData.Username" id="exampleusername" placeholder="Username">
+            </div>
+            <div class="mb-4">
+                <label for="">password </label>
+                <input type="text" class="form-control" name="pswd" [(ngModel)]="adminData.password"  id="exampleusername" placeholder="password">
+            </div>
+            <div class="d-flex justify-content-between">
+               <button class="btn btn-secondary" (click)="onCancel()">cancel</button>
+               <button class="btn btn-dark" type="submit">Save</button>
+            </div>
+            
+        </form>
+    </div>
+
+</div>
