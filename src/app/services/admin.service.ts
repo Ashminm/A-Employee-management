@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
-  base_url ="http://localhost:3000"
+  base_url ="https://a-employee-management-server.onrender.com"
 
   constructor(private http:HttpClient) { }
 
